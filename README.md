@@ -1,3 +1,42 @@
+## 0. **AI Response Failure Due to Query Reformulation and Conversation ID Issue**
+
+- **Situation**: Stakeholders noticed that the AI responses were not being generated correctly during conversations.
+
+- **Task**: My task was to find out why the AI responses were failing and resolve the issue promptly to prevent further disruptions. I had to dig deep into both the backend and the conversation history mechanism to find the root cause, all while ensuring minimal disruption to the live environment.
+
+- **Action**: I began by running multiple tests to replicate the issue. Upon reviewing the logs, I found that the problem originated from query reformulation, which I used before sending the request to the RAG model. The query reformulation was entirely based on conversation history using the conversation ID. However, the logs revealed that the conversation ID was not being updated when users started a new chat, causing older messages to be included in the query reformulation, which then led to incorrect AI responses. After identifying the issue, I realized the problem was on the frontend side—the frontend team had not updated the conversation ID when starting a new chat.
+
+  When I brought this up in a working session, the frontend team raised their hands, explaining that they were in a code freeze, and any changes could impact the flow. Additionally, they needed approval for any hotfixes. With time ticking and a solution needed urgently, I decided to think outside the box.
+
+  I quickly devised a new approach, introducing a **vagueness check service** that would run in parallel to the query reformulation. This service would check if the incoming user query was vague or needed more information. If the query was identified as vague, it would proceed with the query reformulation as originally intended. However, if the query was clear, it would treat it as a new conversation, bypassing the older message history. This approach effectively worked around the frontend limitation while ensuring that AI responses were generated correctly.
+
+- **Result**: The vagueness check service proved to be an innovative solution. It allowed us to continue with accurate AI responses without relying on a frontend hotfix, which would have delayed the project. The final solution was delivered on time, and the stakeholders were satisfied with the improved accuracy of the responses. This approach also became a permanent part of our AI query processing pipeline, preventing similar issues from occurring in the future.
+
+- **What I Gained**: This experience enhanced my ability to troubleshoot complex systems and come up with quick, creative solutions when faced with limitations. I also deepened my understanding of how backend systems interact with frontend applications and learned to handle inter-team dependencies during critical moments. Moreover, I developed a new appreciation for working around technical constraints while ensuring the solution delivered was efficient and impactful.
+
+- **Tags & Questions**:
+  - **Bias for Action**
+    - “Tell me about a time when you had to act quickly to resolve an issue.”
+    - “Describe a situation where you took immediate action to prevent a potential problem.”
+
+  - **Deliver Results**
+    - “Give an example of a time when you were able to deliver results under pressure.”
+    - “How do you ensure success when dealing with last-minute challenges?”
+
+  - **Dive Deep**
+    - “Tell me about a time when you had to analyze a complex problem and find a quick solution.”
+    - “Describe a situation where you had to dig deep into the details to find the root cause of a problem.”
+
+  - **Handling Technical Dependencies**
+    - “Describe a time when you had to work around limitations caused by another team’s code.”
+    - “How do you handle situations where another team’s freeze or constraint is affecting your work?”
+
+  - **Think Big**
+    - “Tell me about a time when you had to think outside the box to solve a challenging technical problem.”
+    - “How do you ensure you are thinking innovatively when dealing with constraints?”
+
+---
+
 ## 1. **Production Issues and LLM Vagueness Check**
 
 - **Situation**: I was working on a critical event where our production system was generating recommendations using an LLM (Large Language Model). As the event drew near, we realized that the recommendations being produced were incorrect and vague, which could severely impact the success of the event. The issue surfaced last-minute, and fixing it without downtime in production was crucial to avoid disappointing both our users and stakeholders.
