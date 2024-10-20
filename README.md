@@ -1,3 +1,15 @@
+# Table of Contents
+
+0. [AI Response Failure Due to Query Reformulation and Conversation ID Issue](#0-ai-response-failure-due-to-query-reformulation-and-conversation-id-issue)
+1. [Production Issues and LLM Vagueness Check](#1-production-issues-and-llm-vagueness-check)
+2. [Admin Dashboard and Automating Feedback](#2-admin-dashboard-and-automating-feedback)
+3. [Fructose Library Integration](#3-fructose-library-integration)
+4. [Managing Conflict with a New Backend Developer](#4-managing-conflict-with-a-new-backend-developer)
+5. [Automating Data Ingestion and Deletion](#5-automating-data-ingestion-and-deletion)
+6. [Conflict Over Approach to RAG Model Optimization](#6-conflict-over-approach-to-rag-model-optimization)
+
+---
+
 ## 0. **AI Response Failure Due to Query Reformulation and Conversation ID Issue**
 
 - **Situation**: Stakeholders noticed that the AI responses were not being generated correctly during conversations.
