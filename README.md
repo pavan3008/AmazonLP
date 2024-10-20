@@ -7,6 +7,7 @@
 4. [Managing Conflict with a New Backend Developer](#4-managing-conflict-with-a-new-backend-developer)
 5. [Automating Data Ingestion and Deletion](#5-automating-data-ingestion-and-deletion)
 6. [Conflict Over Approach to RAG Model Optimization](#6-conflict-over-approach-to-rag-model-optimization)
+7. [Mistake in Not Parallelizing the JSON Processing](#7-mistake-in-not-parallelizing-the-json-processing)
 
 ---
 
@@ -277,3 +278,16 @@
     - “Can you describe a time when you had to dig into technical details to resolve a disagreement?”
     - “How do you approach conflicts that involve deeply technical aspects of a project?”
 
+---
+
+### 7. **Mistake in Not Parallelizing the JSON Processing**
+
+- **Situation**: I was working on a service where thousands of JSON files were passed to a Large Language Model (LLM) to extract intents from each file, which would then be compiled into a final output file. I confidently set the service to run on the full batch of thousands of JSON files. However, after an hour of processing, I realized that the service was only halfway through, and the remaining JSONs were still pending. The project was time-sensitive, and my manager was waiting for the results to pass them on to the next team, which needed them for production-related tasks.
+
+- **Task**: I needed to quickly find a way to speed up the process and deliver the extracted intents to my manager before the deadline, ensuring that the downstream team could continue with their production tasks.
+
+- **Action**: Upon analyzing the problem, I realized that I had overlooked an important aspect—**parallelizing the tasks**. The service was running sequentially on each JSON file, which was why it was taking much longer than expected. To fix this, I quickly rewrote the script to use **multithreading**, allowing the workload to be distributed across multiple threads so that several JSON files could be processed in parallel. I implemented the new script and reran the service, distributing the thousands of JSONs across different threads to significantly increase processing speed.
+
+- **Result**: The multithreaded approach drastically reduced the processing time, allowing me to complete the task much faster than before. The intents were successfully extracted and delivered to my manager on time, ensuring that the downstream team could continue with their production work without further delays. This solution not only saved the project but also improved the overall efficiency of the service for future use.
+
+- **What I Gained**: From this mistake, I learned the importance of considering performance optimizations like **parallelization** when dealing with large datasets. It reinforced my understanding of balancing performance and scalability in time-sensitive projects. This experience also taught me the value of being proactive in identifying solutions quickly when under pressure, ensuring that projects are delivered on time.
