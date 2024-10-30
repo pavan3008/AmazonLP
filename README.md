@@ -1,7 +1,6 @@
 # Table of Contents
 
 0. [AI Response Failure Due to Query Reformulation and Conversation ID Issue](#0-ai-response-failure-due-to-query-reformulation-and-conversation-id-issue)
-1. [Production Issues and LLM Vagueness Check](#1-production-issues-and-llm-vagueness-check)
 2. [Admin Dashboard and Automating Feedback](#2-admin-dashboard-and-automating-feedback)
 3. [Fructose Library Integration](#3-fructose-library-integration)
 4. [Managing Conflict with a New Backend Developer](#4-managing-conflict-with-a-new-backend-developer)
@@ -47,45 +46,6 @@
   - **Think Big**
     - “Tell me about a time when you had to think outside the box to solve a challenging technical problem.”
     - “How do you ensure you are thinking innovatively when dealing with constraints?”
-
----
-
-## 1. **Production Issues and LLM Vagueness Check**
-
-- **Situation**: I was working on a critical event where our production system was generating recommendations using an LLM (Large Language Model). As the event drew near, we realized that the recommendations being produced were incorrect and vague, which could severely impact the success of the event. The issue surfaced last-minute, and fixing it without downtime in production was crucial to avoid disappointing both our users and stakeholders.
-  
-- **Task**: My primary task was to analyze the root cause of the problem, identify a solution, and implement it quickly to ensure the system would deliver accurate recommendations before the event started. I also needed to ensure that this issue wouldn’t occur again in future production environments.
-
-- **Action**: I immediately began by diving into the system logs and analyzing the LLM’s responses. I quickly identified that the issue stemmed from vague outputs from the model, which led to incorrect recommendations being surfaced to the user. With little time to spare, I devised a solution: a Vagueness Check service. This service validated the clarity of LLM responses, flagging ambiguous ones and routing them for further refinement before presenting them to users. To ensure there was no downtime, I worked closely with the DevOps team to deploy this service without disrupting production. Throughout the process, I communicated updates to stakeholders, assuring them that the issue was being actively resolved.
-
-- **Result**: The Vagueness Check service was deployed just in time for the event, significantly improving the quality of the recommendations by filtering out unclear outputs. As a result, the event proceeded smoothly, with no further issues reported. The service improved the accuracy of the LLM's recommendations by 30%, and it became a permanent part of our production pipeline. Stakeholders praised the quick turnaround, and the event was deemed a success. This solution also set a precedent for how we handle similar issues in the future.
-
-- **What I Gained**: This experience strengthened my ability to analyze production issues under pressure and devise quick, effective solutions. It reinforced my understanding of system reliability and response time, especially when working with machine learning models in production. Additionally, I honed my skills in cross-team collaboration, working closely with DevOps to deliver the solution without impacting the live environment. This taught me the importance of balancing technical problem-solving with clear communication to stakeholders during high-stress situations.
-
-- **Tags & Questions**: 
-  - **Bias for Action**
-    - “Tell me about a time when you had to act quickly to resolve an issue.”
-    - “Describe a situation where you took immediate action to prevent a potential problem.”
-  
-  - **Deliver Results**
-    - “Give an example of a time when you were able to deliver results under pressure.”
-    - “How do you ensure success when dealing with last-minute challenges?”
-  
-  - **Dive Deep**
-    - “Tell me about a time when you had to analyze a complex problem and find a quick solution.”
-    - “Describe a situation where you had to dig deep into the details to find the root cause of a problem.”
-
-  - **Handling Production Issues**
-    - “Can you provide an example of when you resolved a production issue in real-time?”
-    - “How do you approach fixing critical production problems under tight deadlines?”
-
-  - **Cross-Team Collaboration**
-    - “Describe a time when you worked across teams to solve an urgent issue.”
-    - “How do you collaborate with other teams to quickly address production problems?”
-
-  - **Handling High-Pressure Situations**
-    - “Tell me about a time when you worked under extreme pressure to deliver a solution.”
-    - “How do you remain effective when solving issues under time constraints?”
 
 ---
 
