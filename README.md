@@ -10,6 +10,14 @@
 
 ---
 
+Why Amazon Q:
+
+Amazon Q Business caught my attention because it’s about transforming how businesses operate and make decisions through AI—an area that feels incredibly inspiring and essential right now. The chance to work on a generative AI platform that enhances business processes, making them smarter, faster, and more efficient, feels like stepping into the future of business technology. I’m excited by how Amazon Q Business pushes the limits of AI to create tools that genuinely impact companies, using techniques like prompt engineering and agent-based workflows that drive real, practical value in day-to-day operations.
+
+What also stands out to me is Amazon’s culture of continuous learning and growth. Working with Amazon Q Business, I know I’d be in an environment that values innovation, where I’d be surrounded by talented, passionate people who are as excited about AI’s potential in the business world as I am. I’m drawn to Amazon not just for its scale but for its commitment to meaningful impact. Amazon Q Business aligns perfectly with my own goal to make technology that empowers businesses, making it the kind of environment where I know I can grow and make a difference.
+
+---
+
 ## 0. **AI Response Failure Due to Query Reformulation and Conversation ID Issue**
 
 - **Situation**: Stakeholders noticed that the AI responses were not being generated correctly during conversations.
